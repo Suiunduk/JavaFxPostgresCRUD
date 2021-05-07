@@ -4,6 +4,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Person {
@@ -11,9 +12,9 @@ public class Person {
     private StringProperty name;
     private StringProperty surname;
     private StringProperty phone_number;
-    private Date date_of_birth;
+    private LocalDate date_of_birth;
 
-    public Person(IntegerProperty id, String name, String surname, String phoneNumber, Date dateOfBirth) {
+    public Person(IntegerProperty id, String name, String surname, String phoneNumber, LocalDate dateOfBirth) {
         this.id = id;
         this.name = new SimpleStringProperty(name);
         this.surname = new SimpleStringProperty(surname);
@@ -33,11 +34,11 @@ public class Person {
         this.id.set(id);
     }
 
-    public Date getDate_of_birth() {
+    public LocalDate getDate_of_birth() {
         return date_of_birth;
     }
 
-    public void setDate_of_birth(Date date_of_birth) {
+    public void setDate_of_birth(LocalDate date_of_birth) {
         this.date_of_birth = date_of_birth;
     }
 

@@ -25,6 +25,7 @@ import javafx.util.Callback;
 
 import java.io.IOException;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -97,6 +98,7 @@ public class TableVewController {
 
         if(person != null){
             personController.setPerson(person);
+            personController.initializeFields();
         }
 
         Parent parent = loader.getRoot();
@@ -144,7 +146,7 @@ public class TableVewController {
                             resultSet.getString("name"),
                             resultSet.getString("surname"),
                             resultSet.getString("phone_number"),
-                            resultSet.getDate("date_of_birth"));
+                            resultSet.getDate("date_of_birth").toLocalDate());
                     personList.add(person);
                 }
                 personTable.setItems(personList);
